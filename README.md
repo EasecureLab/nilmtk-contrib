@@ -29,14 +29,17 @@ Refer to this [notebook](https://github.com/nilmtk/nilmtk-contrib/blob/master/sa
 
 We're currently testing a conda package. You can install in your current environment with:
 
+在当前环境安装
+
 ```
 conda install -c conda-forge -c nilmtk nilmtk-contrib
 ```
 
 or create a dedicated environment (recommended) with:
 
+推荐创建新的单独环境
 ```
-conda create -n nilm -c conda-forge -c nilmtk nilmtk-contrib
+conda create -n nilmtk-contrib -c conda-forge -c nilmtk nilmtk-contrib
 ```
 
 Refer to this [notebook](https://github.com/nilmtk/nilmtk-contrib/tree/master/sample_notebooks) for using the nilmtk-contrib algorithms, using the new NILMTK-API.
