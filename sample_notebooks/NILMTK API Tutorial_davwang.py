@@ -1,8 +1,9 @@
 import warnings
+
 warnings.filterwarnings("ignore")
 from nilmtk.api import API
 from nilmtk.disaggregate import Hart85, CO, Mean, FHMMExact
-from nilmtk_contrib.disaggregate import DAE, DSC, AFHMM, AFHMM_SAC, Seq2Point, Seq2Seq, RNN, WindowGRU
+from nilmtk_contrib.disaggregate import DAE, DSC, AFHMM, AFHMM_SAC, Seq2Point, Seq2Seq, RNN, WindowGRU, ModelTest
 
 redd = {
     'power':
@@ -13,20 +14,22 @@ redd = {
     'sample_rate': 60,
 
     # 'appliances': ['fridge', 'microwave', 'light', 'sockets', 'dish washer', 'washer dryer'],
-    'appliances': ['fridge','microwave'],
+    # 'appliances': ['fridge','microwave'],
+    'appliances': ['fridge'],
     'methods': {
         # "Hart85": Hart85({}),  #还有问题
-        "CO": CO({}),
+        # "CO": CO({}),
         # 'Mean': Mean({}),
         # "AFHMM": AFHMM({'default_num_states': 2}),    #还有问题
         # "AFHMM_SAC": AFHMM_SAC({'default_num_states': 2}),   #还有问题
         # 'DAE': DAE({'n_epochs': 5, 'batch_size': 32}),
         # 'DSC': DSC({}),   #还有问题
-        "FHMMExact": FHMMExact({'num_of_states': 2}),
+        # "FHMMExact": FHMMExact({'num_of_states': 2}),
         # 'RNN':RNN({'n_epochs':5,'batch_size':32}),
-         'Seq2Point':Seq2Point({'n_epochs':5,'batch_size':32}),
+        #  'Seq2Point':Seq2Point({'n_epochs':5,'batch_size':32}),
         # 'Seq2Seq': Seq2Seq({'n_epochs': 5, 'batch_size': 32}),
         # 'WindowGRU':WindowGRU({'n_epochs':5,'batch_size':32}),
+        'ModelTest': ModelTest({}),
     },
     'train': {
         'datasets': {
@@ -35,7 +38,7 @@ redd = {
                 'buildings': {
                     1: {
                         'start_time': '2011-04-17',
-                        'end_time': '2011-04-27'
+                        'end_time': '2011-04-22'
                     },
                 }
 
@@ -49,12 +52,13 @@ redd = {
                 'buildings': {
                     1: {
                         'start_time': '2011-04-17',
-                        'end_time': '2011-04-27'
+                        'end_time': '2011-04-22'
                     },
                 }
             }
         },
-        'metrics': ['rmse','mae','f1score']
+        # 'metrics': ['rmse','mae','f1score']
+        'metrics': ['rmse']
     }
 }
 
