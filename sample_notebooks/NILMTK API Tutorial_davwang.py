@@ -3,7 +3,7 @@ import warnings
 warnings.filterwarnings("ignore")
 from nilmtk.api import API
 from nilmtk.disaggregate import Hart85, CO, Mean, FHMMExact
-from nilmtk_contrib.disaggregate import DAE, DSC, AFHMM, AFHMM_SAC, Seq2Point, Seq2Seq, RNN, WindowGRU, ModelTest
+from nilmtk_contrib.disaggregate import DAE, DSC, AFHMM, AFHMM_SAC, Seq2Point, Seq2Seq, RNN, WindowGRU, ModelTestS2P
 
 redd = {
     'power':
@@ -29,7 +29,7 @@ redd = {
         #  'Seq2Point':Seq2Point({'n_epochs':5,'batch_size':32}),
         # 'Seq2Seq': Seq2Seq({'n_epochs': 5, 'batch_size': 32}),
         # 'WindowGRU':WindowGRU({'n_epochs':5,'batch_size':32}),
-        'ModelTest': ModelTest({}),
+        'ModelTestS2P': ModelTestS2P({}),
     },
     'train': {
         'datasets': {
@@ -51,7 +51,7 @@ redd = {
                 'path': 'C:/Users/davwang/Desktop/redd.hdf5',
                 'buildings': {
                     1: {
-                        'start_time': '2011-04-17',
+                        'start_time': '2011-04-18',
                         'end_time': '2011-04-22'
                     },
                 }

@@ -7,5 +7,5 @@ from .seq2point import Seq2Point
 from .seq2seq import Seq2Seq
 from .WindowGRU import WindowGRU
 from .rnn import RNN
-from .ModelTest import ModelTest
+from .ModelTestS2P import ModelTestS2P
 

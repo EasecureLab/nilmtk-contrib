@@ -29,7 +29,7 @@ Refer to this [notebook](https://github.com/nilmtk/nilmtk-contrib/blob/master/sa
 
 We're currently testing a conda package. You can install in your current environment with:
 
-ÔÚµ±Ç°»·¾³°²×°
+åœ¨å½“å‰ç¯å¢ƒå®‰è£…
 
 ```
 conda install -c conda-forge -c nilmtk nilmtk-contrib
@@ -37,7 +37,7 @@ conda install -c conda-forge -c nilmtk nilmtk-contrib
 
 or create a dedicated environment (recommended) with:
 
-ÍÆ¼ö´´½¨ĞÂµÄµ¥¶À»·¾³
+æ¨èåˆ›å»ºæ–°çš„å•ç‹¬ç¯å¢ƒ
 ```
 conda create -n nilmtk-contrib -c conda-forge -c nilmtk nilmtk-contrib
 ```
