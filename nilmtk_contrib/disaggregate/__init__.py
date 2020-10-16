@@ -8,4 +8,5 @@ from .seq2seq import Seq2Seq
 from .WindowGRU import WindowGRU
 from .rnn import RNN
 from .ModelTestS2P import ModelTestS2P
+from .ModelTestS2S import ModelTestS2S
 

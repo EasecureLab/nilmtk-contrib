@@ -3,7 +3,7 @@ import warnings
 warnings.filterwarnings("ignore")
 from nilmtk.api import API
 from nilmtk.disaggregate import Hart85, CO, Mean, FHMMExact
-from nilmtk_contrib.disaggregate import DAE, DSC, AFHMM, AFHMM_SAC, Seq2Point, Seq2Seq, RNN, WindowGRU, ModelTestS2P
+from nilmtk_contrib.disaggregate import DAE, DSC, AFHMM, AFHMM_SAC, Seq2Point, Seq2Seq, RNN, WindowGRU, ModelTestS2P, ModelTestS2S
 
 redd = {
     'power':
@@ -29,7 +29,8 @@ redd = {
         #  'Seq2Point':Seq2Point({'n_epochs':5,'batch_size':32}),
         # 'Seq2Seq': Seq2Seq({'n_epochs': 5, 'batch_size': 32}),
         # 'WindowGRU':WindowGRU({'n_epochs':5,'batch_size':32}),
-        'ModelTestS2P': ModelTestS2P({}),
+        # 'ModelTestS2P': ModelTestS2P({}),
+        'ModelTestS2S': ModelTestS2S({}),
     },
     'train': {
         'datasets': {
