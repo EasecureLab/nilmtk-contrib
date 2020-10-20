@@ -39,13 +39,12 @@ class ModelTestS2S(Disaggregator):
                 prediction = []
                 model = self.models[appliance]
                 prediction = model.predict(test_main_array, batch_size=512)
-                l = 99
-                n = len(prediction) + l - 1
+                n = len(prediction) + 99 - 1
                 sum_arr = np.zeros((n))
                 counts_arr = np.zeros((n))
                 for i in range(len(prediction)):
-                    sum_arr[i:i + l] += prediction[i].flatten()
-                    counts_arr[i:i + l] += 1
+                    sum_arr[i:i + 99] += prediction[i].flatten()
+                    counts_arr[i:i + 99] += 1
                 for i in range(len(sum_arr)):
                     sum_arr[i] = sum_arr[i] / counts_arr[i]
                 prediction = 51 + (sum_arr * 83)

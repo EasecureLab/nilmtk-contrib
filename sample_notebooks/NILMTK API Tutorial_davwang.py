@@ -3,7 +3,7 @@ import warnings
 warnings.filterwarnings("ignore")
 from nilmtk.api import API
 from nilmtk.disaggregate import Hart85, CO, Mean, FHMMExact
-from nilmtk_contrib.disaggregate import DAE, DSC, AFHMM, AFHMM_SAC, Seq2Point, Seq2Seq, RNN, WindowGRU, ModelTestS2P, ModelTestS2S
+from nilmtk_contrib.disaggregate import DAE, DSC, AFHMM, AFHMM_SAC, Seq2Point, Seq2Seq, RNN, WindowGRU, ModelTestS2P, ModelTestS2S, ModelTestFHMMExact
 
 redd = {
     'power':
@@ -15,7 +15,7 @@ redd = {
 
     # 'appliances': ['fridge', 'microwave', 'light', 'sockets', 'dish washer', 'washer dryer'],
     # 'appliances': ['fridge','microwave'],
-    'appliances': ['fridge'],
+    'appliances': ['fridge','microwave'],
     'methods': {
         # "Hart85": Hart85({}),  #还有问题
         # "CO": CO({}),
@@ -30,7 +30,9 @@ redd = {
         # 'Seq2Seq': Seq2Seq({'n_epochs': 5, 'batch_size': 32}),
         # 'WindowGRU':WindowGRU({'n_epochs':5,'batch_size':32}),
         # 'ModelTestS2P': ModelTestS2P({}),
-        'ModelTestS2S': ModelTestS2S({}),
+        'ModelTestFHMMExact': ModelTestFHMMExact({'num_of_states': 2}),
+        # 'ModelTestS2S': ModelTestS2S({}),
+
     },
     'train': {
         'datasets': {
