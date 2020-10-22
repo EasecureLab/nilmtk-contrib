@@ -1,7 +1,8 @@
 import warnings
 
 warnings.filterwarnings("ignore")
-from nilmtk.api import API
+# from nilmtk.api import API
+from nilmtk.apiModified import API
 from nilmtk.disaggregate import Hart85, CO, Mean, FHMMExact
 from nilmtk_contrib.disaggregate import DAE, DSC, AFHMM, AFHMM_SAC, Seq2Point, Seq2Seq, RNN, WindowGRU, ModelTestS2P, ModelTestS2S, ModelTestFHMMExact
 
@@ -15,23 +16,23 @@ redd = {
 
     # 'appliances': ['fridge', 'microwave', 'light', 'sockets', 'dish washer', 'washer dryer'],
     # 'appliances': ['fridge','microwave'],
-    'appliances': ['fridge','microwave'],
+    'appliances': ['fridge', 'microwave'],
     'methods': {
-        # "Hart85": Hart85({}),  #还有问题
+        # "Hart85": Hart85({}),                     #还有问题
         # "CO": CO({}),
         # 'Mean': Mean({}),
-        # "AFHMM": AFHMM({'default_num_states': 2}),    #还有问题
-        # "AFHMM_SAC": AFHMM_SAC({'default_num_states': 2}),   #还有问题
+        # "AFHMM": AFHMM({}),                       #涉及到多进程，fork问题，请使用ubuntu运行，大致运行时间30分钟上下
+        # "AFHMM_SAC": AFHMM_SAC({}),               #涉及到多进程，fork问题，请使用ubuntu运行，大致运行时间30分钟上下
         # 'DAE': DAE({'n_epochs': 5, 'batch_size': 32}),
-        # 'DSC': DSC({}),   #还有问题
+        # 'DSC': DSC({}),                           #还有问题
         # "FHMMExact": FHMMExact({'num_of_states': 2}),
         # 'RNN':RNN({'n_epochs':5,'batch_size':32}),
-        #  'Seq2Point':Seq2Point({'n_epochs':5,'batch_size':32}),
+        # 'Seq2Point': Seq2Point({'n_epochs': 5, 'batch_size': 32}),
         # 'Seq2Seq': Seq2Seq({'n_epochs': 5, 'batch_size': 32}),
-        # 'WindowGRU':WindowGRU({'n_epochs':5,'batch_size':32}),
+        # 'WindowGRU': WindowGRU({'n_epochs': 5, 'batch_size': 32}),
         # 'ModelTestS2P': ModelTestS2P({}),
-        'ModelTestFHMMExact': ModelTestFHMMExact({'num_of_states': 2}),
         # 'ModelTestS2S': ModelTestS2S({}),
+        'ModelTestFHMMExact': ModelTestFHMMExact({'num_of_states': 2}),
 
     },
     'train': {
@@ -60,8 +61,8 @@ redd = {
                 }
             }
         },
-        # 'metrics': ['rmse','mae','f1score']
-        'metrics': ['rmse']
+        'metrics': ['rmse', 'mae', 'f1score','relative_error', 'r2score','nde','nep']
+        # 'metrics': ['rmse']
     }
 }
 
