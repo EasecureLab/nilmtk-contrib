@@ -47,7 +47,7 @@ Refer to this [notebook](https://github.com/nilmtk/nilmtk-contrib/tree/master/sa
 ## Dependencies
 
 - NILMTK>=0.4
-- scikit-learn>=0.21 (already required by NILMTK)
+- scikit-learn>=0.21 (already required by NILMTK)，实际测试需要0.21.3才能运行DSC算法
 - Keras>=2.2.4 
 - cvxpy>=1.0.0
 
