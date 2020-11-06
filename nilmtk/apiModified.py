@@ -329,6 +329,8 @@ class API():
                 computed_metric[clf_name] = self.compute_loss(gt_overall, pred_overall[clf_name], loss_function)
             computed_metric = pd.DataFrame(computed_metric)
             print("............ ", metric, " ..............")
+			#显示所有列
+            pd.set_option('display.max_columns', None)
             print(computed_metric)
             self.errors.append(computed_metric)
             self.errors_keys.append(self.storing_key + "_" + metric)

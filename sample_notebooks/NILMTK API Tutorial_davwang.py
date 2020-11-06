@@ -24,7 +24,7 @@ redd = {
         # "AFHMM": AFHMM({}),                       #涉及到多进程，fork问题，请使用ubuntu运行，大致运行时间30分钟上下
         # "AFHMM_SAC": AFHMM_SAC({}),               #涉及到多进程，fork问题，请使用ubuntu运行，大致运行时间30分钟上下
         # 'DAE': DAE({'n_epochs': 5, 'batch_size': 32}),
-        # 'DSC': DSC({}),                           #还有问题
+        # 'DSC': DSC({}),                           # scikit-learn=0.21.3
         # "FHMMExact": FHMMExact({'num_of_states': 2}),
         # 'RNN':RNN({'n_epochs':5,'batch_size':32}),
         # 'Seq2Point': Seq2Point({'n_epochs': 5, 'batch_size': 32}),
