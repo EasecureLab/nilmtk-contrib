@@ -6,6 +6,16 @@ from nilmtk.apiModified import API
 from nilmtk.disaggregate import Hart85, CO, Mean, FHMMExact
 from nilmtk_contrib.disaggregate import DAE, DSC, AFHMM, AFHMM_SAC, Seq2Point, Seq2Seq, RNN, WindowGRU, ModelTestS2P, ModelTestS2S, ModelTestFHMMExact
 
+# 'appliances': ['fridge', 'microwave', 'light', 'sockets', 'dish washer', 'washer dryer'],
+# 'appliances': ['fridge','microwave'],
+# 'metrics': ['rmse', 'mae', 'f1score','relative_error', 'r2score','nde','nep']
+# 'metrics': ['rmse']
+# "Hart85": Hart85({}),                     #还有问题
+# 'Mean': Mean({}),
+# 'ModelTestS2P': ModelTestS2P({}),
+# 'ModelTestS2S': ModelTestS2S({}),
+# 'ModelTestFHMMExact': ModelTestFHMMExact({'num_of_states': 2}),
+
 redd = {
     'power':
         {
@@ -13,27 +23,18 @@ redd = {
             'appliance': ['apparent', 'active']
         },
     'sample_rate': 60,
-
-    # 'appliances': ['fridge', 'microwave', 'light', 'sockets', 'dish washer', 'washer dryer'],
-    # 'appliances': ['fridge','microwave'],
-    'appliances': ['fridge', 'microwave'],
+    'appliances': ['fridge', 'microwave', 'light', 'sockets', 'dish washer', 'washer dryer'],
     'methods': {
-        # "Hart85": Hart85({}),                     #还有问题
         # "CO": CO({}),
-        # 'Mean': Mean({}),
-        # "AFHMM": AFHMM({}),                       #涉及到多进程，fork问题，请使用ubuntu运行，大致运行时间30分钟上下
+        # "FHMMExact": FHMMExact({'num_of_states': 2}),
+        # 'DSC': DSC({}),
+        "AFHMM": AFHMM({}),                       #涉及到多进程，fork问题，请使用ubuntu运行，大致运行时间30分钟上下
         # "AFHMM_SAC": AFHMM_SAC({}),               #涉及到多进程，fork问题，请使用ubuntu运行，大致运行时间30分钟上下
         # 'DAE': DAE({'n_epochs': 5, 'batch_size': 32}),
-        # 'DSC': DSC({}),                           # scikit-learn=0.21.3
-        # "FHMMExact": FHMMExact({'num_of_states': 2}),
         # 'RNN':RNN({'n_epochs':5,'batch_size':32}),
         # 'Seq2Point': Seq2Point({'n_epochs': 5, 'batch_size': 32}),
         # 'Seq2Seq': Seq2Seq({'n_epochs': 5, 'batch_size': 32}),
         # 'WindowGRU': WindowGRU({'n_epochs': 5, 'batch_size': 32}),
-        # 'ModelTestS2P': ModelTestS2P({}),
-        # 'ModelTestS2S': ModelTestS2S({}),
-        'ModelTestFHMMExact': ModelTestFHMMExact({'num_of_states': 2}),
-
     },
     'train': {
         'datasets': {
@@ -62,7 +63,6 @@ redd = {
             }
         },
         'metrics': ['rmse', 'mae', 'f1score','relative_error', 'r2score','nde','nep']
-        # 'metrics': ['rmse']
     }
 }
 
