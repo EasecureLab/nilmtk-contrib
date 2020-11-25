@@ -368,7 +368,7 @@ class API():
         for meter, data in test_submeters:
             concatenated_df_app = pd.concat(data, axis=1)
             index = concatenated_df_app.index
-            gt[meter] = pd.Series(concatenated_df_app.values.flatten(), index=index)
+            gt[meter] = pd.Series(concatenated_df_app.values.flatten())
 
         gt_overall = pd.DataFrame(gt, dtype='float32')
         pred = {}
